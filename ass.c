@@ -4,49 +4,49 @@
 
 void main() {
 
-	char name[41];
-	char studentId[10];
-	char grade;
-    double gradepoint;
+  char name[41];
+  char studentId[10];
+  char grade;
+  double gradepoint;
 
-	printf("Enter student's Name : ");
-	scanf("%s", name);
+  printf("Enter student's Name : ");
+  scanf("%s", name);
 
-    rewind(stdin);
+  rewind(stdin);
 
-	printf("Enter student's ID : ");
-	scanf("%s", studentId);
+  printf("Enter student's ID : ");
+  scanf("%s", studentId);
 
-    printf("Enter student's grade: ");
-    scanf("%s", &grade);
+  printf("Enter student's grade: ");
+  scanf("%s", &grade);
 
-    if (grade == 'A') {
+  if (grade == 'A') {
         printf("gradepoint = 4.00\n");
-    }
-    else if (grade == 'A-'){
+  }
+  else if (grade == 'A-'){
         printf("gradepoint = 3.75\n");
-    }
-    else if (grade == 'B+') {
+  }
+  else if (grade == 'B+') {
         printf("gradepoint = 3.50\n");
-    }
-    else if (grade == 'B') {
+  }
+  else if (grade == 'B') {
         printf("gradepoint = 3.00\n");
-    }
-    else if (grade == 'B-') {
+  }
+  else if (grade == 'B-') {
         printf("gradepoint = 2.75\n");
-    }
-    else if (grade == 'C+') {
+  }
+  else if (grade == 'C+') {
         printf("gradepoint = 2.50\n");
-    }
-    else if (grade == 'C') {
+  }
+  else if (grade == 'C') {
         printf("gradepoint = 2.00\n");
-    }
-    else if (grade == 'F') {
+  }
+  else if (grade == 'F') {
         printf("gradepoint = 0.00\n");
-    }
-    else {
+  }
+  else {
         printf("Invalid gradepoint\n");
-    }
+  }
 
     return 0;
 }
