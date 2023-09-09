@@ -201,19 +201,19 @@ char calculateLetterGrade(double gpa) {
         grade = 'A';
     }
     else if (gpa >= 3.75) {
-        grade = 'A';
+        grade = 'A-';
     }
     else if (gpa >= 3.50) {
-        grade = 'B';
+        grade = 'B+';
     }
     else if (gpa >= 3.00) {
         grade = 'B';
     }
     else if (gpa >= 2.75) {
-        grade = 'B';
+        grade = 'B-';
     }
     else if (gpa >= 2.50) {
-        grade = 'C';
+        grade = 'C+';
     }
     else if (gpa >= 2.00) {
         grade = 'C';
