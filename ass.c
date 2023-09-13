@@ -16,7 +16,6 @@
 void displayMainMenu();
 int staffAdministratorLogin();
 void staffAdministratorMode();
-double calculateGPA(int numCourses);
 char calculateLetterGrade(double gpa);
 void studentMode();
 void saveStudentData();
@@ -116,8 +115,30 @@ void staffAdministratorMode() {
 
         printf("Semester 1 GPA: %.2f\n", gpaSem1);
 
-        result = calculateLetterGrade(gpaSem1);
-        printf("Grade Obtained: %c\n", result);
+        if (gpaSem1 == 4.0) {
+            printf("Grade Obtained : A\n");
+        }
+        else if (gpaSem1 >= 3.75) {
+            printf("Grade Obtained : A-\n");
+        }
+        else if (gpaSem1 >= 3.50) {
+            printf("Grade Obtained : B+\n");
+        }
+        else if (gpaSem1 >= 3.00) {
+            printf("Grade Obtained : B\n");
+        }
+        else if (gpaSem1 >= 2.75) {
+            printf("Grade Obtained : B-\n");
+        }
+        else if (gpaSem1 >= 2.50) {
+            printf("Grade Obtained : C+\n");
+        }
+        else if (gpaSem1 >= 2.00) {
+            printf("Grade Obtained : C\n");
+        }
+        else {
+            printf("Grade Obtained : F\n");
+        }
 
         // Semester 2
         printf("\n\n");
@@ -144,8 +165,30 @@ void staffAdministratorMode() {
 
         printf("Semester 2 GPA: %.2f\n", gpaSem2);
 
-        result = calculateLetterGrade(gpaSem2);
-        printf("Grade Obtained: %c\n", result);
+        if (gpaSem2 == 4.0) {
+            printf("Grade Obtained : A\n");
+        }
+        else if (gpaSem2 >= 3.75) {
+            printf("Grade Obtained : A-\n");
+        }
+        else if (gpaSem2 >= 3.50) {
+            printf("Grade Obtained : B+\n");
+        }
+        else if (gpaSem2 >= 3.00) {
+            printf("Grade Obtained : B\n");
+        }
+        else if (gpaSem2 >= 2.75) {
+            printf("Grade Obtained : B-\n");
+        }
+        else if (gpaSem2 >= 2.50) {
+            printf("Grade Obtained : C+\n");
+        }
+        else if (gpaSem2 >= 2.00) {
+            printf("Grade Obtained : C\n");
+        }
+        else {
+            printf("Grade Obtained : F\n");
+        }
 
         // Semester 3
         printf("\n\n");
@@ -172,8 +215,31 @@ void staffAdministratorMode() {
 
         printf("Semester 3 GPA: %.2f\n", gpaSem3);
 
-        result = calculateLetterGrade(gpaSem3);
-        printf("Grade Obtained: %c\n", result);
+        if (gpaSem3 == 4.0) {
+            printf("Grade Obtained : A\n");
+        }
+        else if (gpaSem3 >= 3.75) {
+            printf("Grade Obtained : A-\n");
+        }
+        else if (gpaSem3 >= 3.50) {
+            printf("Grade Obtained : B+\n");
+        }
+        else if (gpaSem3 >= 3.00) {
+            printf("Grade Obtained : B\n");
+        }
+        else if (gpaSem3 >= 2.75) {
+            printf("Grade Obtained : B-\n");
+        }
+        else if (gpaSem3 >= 2.50) {
+            printf("Grade Obtained : C+\n");
+        }
+        else if (gpaSem3 >= 2.00) {
+            printf("Grade Obtained : C\n");
+        }
+        else {
+            printf("Grade Obtained : F\n");
+        }
+
 
         // Calculate CGPA
         totalCreditHours = AAA1003 + AAA1014 + ABA1003 + ABA1014 + ACA1003 + ACA1014;
@@ -183,46 +249,36 @@ void staffAdministratorMode() {
         printf("\n\nTotal credit hours: %d\n", totalCreditHours);
         printf("CGPA: %.2f\n", cgpa);
 
-        result = calculateLetterGrade(cgpa);
-        printf("Grade CPGA: %c\n", result);
-
+        if (cgpa == 4.0) {
+            printf("Grade Obtained : A\n");
+        }
+        else if (cgpa >= 3.75) {
+            printf("Grade Obtained : A-\n");
+        }
+        else if (cgpa >= 3.50) {
+            printf("Grade Obtained : B+\n");
+        }
+        else if (cgpa >= 3.00) {
+            printf("Grade Obtained : B\n");
+        }
+        else if (cgpa >= 2.75) {
+            printf("Grade Obtained : B-\n");
+        }
+        else if (cgpa >= 2.50) {
+            printf("Grade Obtained : C+\n");
+        }
+        else if (cgpa >= 2.00) {
+            printf("Grade Obtained : C\n");
+        }
+        else {
+            printf("Grade Obtained : F\n");
+        }
 
         saveStudentData();
     }
     else {
         printf("Staff administrator login failed. Access denied.\n");
     }
-}
-
-char calculateLetterGrade(double gpa) {
-    char grade;
-
-    if (gpa == 4.0) {
-        grade = 'A';
-    }
-    else if (gpa >= 3.75) {
-        grade = 'A-';
-    }
-    else if (gpa >= 3.50) {
-        grade = 'B+';
-    }
-    else if (gpa >= 3.00) {
-        grade = 'B';
-    }
-    else if (gpa >= 2.75) {
-        grade = 'B-';
-    }
-    else if (gpa >= 2.50) {
-        grade = 'C+';
-    }
-    else if (gpa >= 2.00) {
-        grade = 'C';
-    }
-    else {
-        grade = 'F';
-    }
-
-    return toupper(grade);
 }
 
 void studentMode() {
@@ -234,7 +290,7 @@ void studentMode() {
 }
 
 void saveStudentData() {
-    FILE* file = fopen("studentResult_data.txt", "a");
+    FILE* file = fopen("viewStudentResult_data.txt", "a");
     if (file == NULL) {
         printf("Error opening file for writing.\n");
         return;
@@ -251,7 +307,7 @@ void saveStudentData() {
 }
 
 void displayStudentData() {
-    FILE* file = fopen("studentResult_data.txt", "r");
+    FILE* file = fopen("viewStudentResult_data.txt", "r");
     if (file == NULL) {
         printf("Error opening file for reading.\n");
         return;
@@ -264,4 +320,3 @@ void displayStudentData() {
 
     fclose(file);
 }
-
