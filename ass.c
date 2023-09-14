@@ -249,30 +249,30 @@ void staffAdministratorMode() {
         printf("\n\nTotal credit hours: %d\n", totalCreditHours);
         printf("CGPA: %.2f\n", cgpa);
 
-        if (cgpa == 4.0) {
-            printf("Grade Obtained : A\n");
-        }
-        else if (cgpa >= 3.75) {
-            printf("Grade Obtained : A-\n");
-        }
-        else if (cgpa >= 3.50) {
-            printf("Grade Obtained : B+\n");
-        }
-        else if (cgpa >= 3.00) {
-            printf("Grade Obtained : B\n");
-        }
-        else if (cgpa >= 2.75) {
-            printf("Grade Obtained : B-\n");
-        }
-        else if (cgpa >= 2.50) {
-            printf("Grade Obtained : C+\n");
-        }
-        else if (cgpa >= 2.00) {
-            printf("Grade Obtained : C\n");
-        }
-        else {
-            printf("Grade Obtained : F\n");
-        }
+    if (cgpa == 4.0) {
+        printf("Grade Obtained : A\n");
+    }
+    else if (cgpa >= 3.75) {
+        printf("Grade Obtained : A-\n");
+    }
+    else if (cgpa >= 3.50) {
+        printf("Grade Obtained : B+\n");
+    }
+    else if (cgpa >= 3.00) {
+        printf("Grade Obtained : B\n");
+    }
+    else if (cgpa >= 2.75) {
+        printf("Grade Obtained : B-\n");
+    }
+    else if (cgpa >= 2.50) {
+        printf("Grade Obtained : C+\n");
+    }
+    else if (cgpa >= 2.00) {
+        printf("Grade Obtained : C\n");
+    }
+    else {
+        printf("Grade Obtained : F\n");
+    }
 
         saveStudentData();
     }
@@ -290,24 +290,66 @@ void studentMode() {
 }
 
 void saveStudentData() {
-    FILE* file = fopen("viewStudentResult_data.txt", "a");
+    FILE* file = fopen("kolejPasarCalculator.txt", "a");
     if (file == NULL) {
         printf("Error opening file for writing.\n");
         return;
     }
-
-    fprintf(file, "Student Name: %s\n", studentName);
+   
+    fprintf(file, "\nStudent Name: %s\n", studentName);
     fprintf(file, "Student ID: %s\n", studentID);
     fprintf(file, "Semester 1 GPA: %.2f\n", gpaSem1);
     fprintf(file, "Semester 2 GPA: %.2f\n", gpaSem2);
     fprintf(file, "Semester 3 GPA: %.2f\n", gpaSem3);
     fprintf(file, "CPGA Result: %.2f\n", cgpa);
+    fprintf(file, "\nCourse Recommendation:\n");
+
+    if (cgpa == 4.0) {
+        fprintf(file, "Grade Obtained : A\n");
+        fprintf(file, "Congratulations, on your excellent result !\n");
+        fprintf(file, "We recommend looking into more specialized courses to your area of interest.\n");
+    }
+    else if (cgpa >= 3.75) {
+        fprintf(file, "Grade Obtained : A-\n");
+        fprintf(file, "You're performing excellently in your studies!\n");
+        fprintf(file, "Think about trying more demanding classes in your major or exploring different subjects.\n");
+    }
+    else if (cgpa >= 3.50) {
+        fprintf(file, "Grade Obtained : B+\n");
+        fprintf(file, "You're making great strides!\n");
+        fprintf(file, "Concentrate on essential courses in your major!\n");
+    }
+    else if (cgpa >= 3.00) {
+        fprintf(file, "Grade Obtained : B\n");
+        fprintf(file, "There's potential for improvement, so stay motivated!\n");
+        fprintf(file, "Consider seeking academic support resources and discussing your goals with an advisor.\n");
+    }
+    else if (cgpa >= 2.75) {
+        fprintf(file, "Grade Obtained : B-\n");
+        fprintf(file, "You're making progress, consider exploring study groups to enhance your learning experience.\n");
+        fprintf(file, "Remember, reaching out to academic support services can provide valuable assistance.\n");
+    }
+    else if (cgpa >= 2.50) {
+        fprintf(file, "Grade Obtained : C+\n");
+        fprintf(file, "Keep up the effort! Exploring study groups may help you reach your academic goals.\n");
+        fprintf(file, "Don't hesitate to seek guidance from academic advisors or tutors if needed.\n");
+    }
+    else if (cgpa >= 2.00) {
+        fprintf(file, "Grade Obtained : C\n");
+        fprintf(file, "You're on the right track! Joining study groups could enhance your learning experience.\n");
+        fprintf(file, "Consider discussing your progress with an academic advisor for personalized support.\n");
+    }
+    else {
+        fprintf(file, "Grade Obtained : F\n");
+        fprintf(file, "Don't be discouraged! Reach out to academic support services and explore ways to improve your performance.\n");
+        fprintf(file, "Seeking help and guidance is a positive step towards academic success.\n");
+    }
 
     fclose(file);
 }
 
 void displayStudentData() {
-    FILE* file = fopen("viewStudentResult_data.txt", "r");
+    FILE* file = fopen("kolejPasarCalculator.txt", "r");
     if (file == NULL) {
         printf("Error opening file for reading.\n");
         return;
@@ -320,3 +362,6 @@ void displayStudentData() {
 
     fclose(file);
 }
+
+
+
